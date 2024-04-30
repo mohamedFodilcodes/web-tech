@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        body {
+            margin: 0;
+            background-color: #101820; /* Dark background for a modern look */
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif; /* Modern, readable font */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Adjust content alignment from center to start */
+            min-height: 100vh;
+            padding-top: 20px; /* Add some padding at the top for spacing */
+            
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 0; /* Ensure no additional top margin */
+        }
+        li {
+            padding: 10px 20px;
+        }
+        li a {
+            text-decoration: none;
+            color: #D0D6F9;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        li a:hover {
+            color: #F0F0F0;
+        }
+        .branches {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .branch {
+            text-align: center;
+        }
+        .branch a img {
+            max-width: 200px; /* Adjusted for uniformity */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .branch label {
+            display: block;
+            margin-top: 10px;
+            color: #D0D6F9;
+            font-size: 16px;
+        }
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .social-link img {
+            height: 40px; /* Adjusted to match provided code */
+            width: 40px; /* Adjusted to match provided code */
+            transition: transform 0.3s ease;
+        }
+        .social-link img:hover {
+            transform: scale(1.1);
+        }
+       .p{
+        text-align: center;
+       }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const href = this.getAttribute('href');
+
+                    // Trigger fade out animation
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+
+                    setTimeout(function() {
+                        window.location.href = href; // Redirect after the animation
+                    }, 500); // This timeout duration should match the animation duration
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="webtech.html">HOME</a></li>
+        <li><a href="bmws.html">BMW'S</a></li>
+        <li><a href="branches.html">BRANCHES</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
+    </ul>
+    <div class="branches">
+        <div class="branch">
+            <a href="https://www.google.com/maps/dir//sytner+bmw/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4879787fae40d0b7:0xc13575f19f2269a6?sa=X&ved=1t:3061&ictx=111">
+                <img src="pngs/map1.jpeg" alt="Sytner">
+            </a>
+            <label>Sytner</label>
+        </div>
+        <div class="branch">
+            <a href="https://www.google.com/maps?rlz=1C5CHFA_enGB1077GB1077&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyEAgBEC4YrwEYxwEYgAQYjgUyBwgCEAAYgAQyEAgDEC4YrwEYxwEYgAQYjgUyBwgEEAAYgAQyBggFEEUYPTIGCAYQRRg8MgYIBxBFGDzSAQgzNTc1ajBqNKgCALACAA&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KaMj3u-RsXtIMbRAwH35GCNt&daddr=20+Barton+Dock+Rd,+Trafford+Park,+Stretford,+Manchester+M41+7GF">
+                <img src="pngs/map2.jpeg" alt="Williams">
+            </a>
+            <label>Williams</label>
+        </div>
+        <div class="branch">
+            <a href="https://www.google.com/maps?s=web&rlz=1C5CHFA_enGB1077GB1077&lqi=ChFzdGVwaGVuIGphbWVzIGJtdyIDiAEBSI-hrfzlgICACFofEAAQARACGAAYARgCIhFzdGVwaGVuIGphbWVzIGJtd5IBCmJtd19kZWFsZXKqATkQATIeEAEiGr_XPyG5wo8QvNsbQ9HyqjkcfCD1ojrK_vncMhUQAiIRc3RlcGhlbiBqYW1lcyBibXc&vet=12ahUKEwixjLrk5ueFAxU8WkEAHfhnAfkQ1YkKegQIPBAB..i&cs=1&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KSn5IkHXqdhHMRkOaGJvniFk&daddr=Duke+of+Wellington+Ave,+Royal+Arsenal,+London+SE18+6SR">
+                <img src="pngs/map3.jpeg" alt="Stephen James">
+            </a>
+            <label>Stephen James</label>
+        </div>
+    </div>
+    <h2><b>What to expect to find and do at our dealerships!</b></h2>
+    <div class="msg">
+        <ul>
+            <li>At our dealership, you'll be warmly welcomed by 
+                our knowledgeable sales team. Whether you're interested in exploring our exquisite vehicle collection or have 
+                any questions, we are here to ensure you receive all the assistance you need.</li>
+        </ul>
+    
+    </div>
+    <div class="socials">
+        <a class="social-link" href="https://twitter.com/bmw"><img src="pngs/twitter.png" alt="Twitter"></a>
+        <a class="social-link" href="https://facebook.com/bmw"><img src="pngs/facebook.png" alt="Facebook"></a>
+        <a class="social-link" href="https://instagram.com/bmw"><img src="./pngs/ig.png" alt="Instagram"></a>
+    </div>
+</body>
+</html>

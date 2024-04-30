@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        body {
+            margin: 0;
+            background-color: #101820; /* Dark background for a modern look */
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif; /* Modern, readable font */
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 100%;
+            justify-content: space-around;
+            margin-top: 0;
+        }
+        li a {
+            text-decoration: none;
+            color: #D0D6F9;
+            font-size: 18px;
+            padding: 14px 16px;
+            transition: background-color 0.3s ease;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+        .info-box {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #FFF;
+        }
+        .info-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+        .socials {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-link img {
+            width: 40px; /* Set a standard size for social icons */
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .social-link:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const href = this.getAttribute('href');
+
+                    // Trigger fade out animation
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+
+                    setTimeout(function() {
+                        window.location.href = href; // Redirect after the animation
+                    }, 500); // This timeout duration should match the animation duration
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="./webtech.html">HOME</a></li>
+        <li><a href="./bmws.html">BMW'S</a></li>
+        <li><a href="./branches.html">BRANCHES</a></li>
+        <li><a href="./aboutus.html">ABOUT US</a></li>
+        <li><a href="./contactus.html">CONTACT US</a></li>
+    </ul>
+    <h2>Interesting Facts About BMW</h2>
+    <div class="info-container">
+        <div class="info-box">
+            <h3>Founding Date</h3>
+            <p>BMW was founded on March 7, 1916. It originally focused on aircraft engines.</p>
+        </div>
+        <div class="info-box">
+            <h3>The Logo</h3>
+            <p>The BMW logo is often thought to represent a spinning propeller, linking back to the company's aviation origins.</p>
+        </div>
+        <div class="info-box">
+            <h3>Innovation in Automotive</h3>
+            <p>BMW is a pioneer in automotive technology, being the first to introduce technologies like head-up displays and active suspension systems.</p>
+        </div>
+    </div>
+    <br>
+    <h3>The WILD BMW X5 M</h3>
+
+    <video width="640" height="480" controls>
+        <source src="x5vid.mp4" type="video/mp4">
+        <source src="x5vid.mp4" type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
+    
+    <div class="socials">
+        <a class="social-link" href="https://twitter.com/bmw"><img src="./pngs/twitter.png" alt="Twitter"></a>
+        <a class="social-link" href="https://facebook.com/bmw"><img src="./pngs/facebook.png" alt="Facebook"></a>
+        <a class="social-link" href="https://instagram.com/bmw"><img src="./pngs/ig.png" alt="Instagram"></a>
+    </div>
+
+</body>
+</html>
