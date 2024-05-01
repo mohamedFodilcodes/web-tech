@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles are defined for fading animations and general layout -->
+    <style>
+        /* Fade-in animation setup */
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+        /* Fade-out animation setup */
+        .fade-out {
+            animation: fadeOut 0.5s;
+        }
+        /* Keyframes define the steps of the fadeIn animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Keyframes define the steps of the fadeOut animation */
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        /* General body styling for layout and aesthetics */
+        body {
+            margin: 0;
+            background-color: #101820; /* Dark background for modern look */
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif; /* Roboto font for readability */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Start content alignment */
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 0;
+        }
+        li {
+            padding: 10px 20px;
+        }
+        li a {
+            text-decoration: none;
+            color: #D0D6F9;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        li a:hover {
+            color: #F0F0F0;
+        }
+        h1 {
+            text-align: center;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .social-link img {
+            height: 40px;
+            width: 40px;
+            transition: transform 0.3s ease;
+        }
+        .social-link img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <!-- Google fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- JavaScript for handling link behavior and animations -->
+    <script>
+        // Event listener to handle document loaded state
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+            // Iterate over each link and bind a click event
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Stop the default navigation
+                    const href = this.getAttribute('href'); // Get the href attribute
+
+                    // Apply fade out animation
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+
+                    // After the animation completes, redirect to the new page
+                    setTimeout(function() {
+                        window.location.href = href; // Redirect to href
+                    }, 500); // Delay matches animation duration
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation menu -->
+    <ul>
+        <li><a href="./webtech.html">HOME</a></li>
+        <li><a href="./bmws.html">BMW'S</a></li>
+        <li><a href="./branches.html">BRANCHES</a></li>
+        <li><a href="./aboutus.html">ABOUT US</a></li>
+        <li><a href="./contactus.html">CONTACT US</a></li>
+    </ul>
+    <!-- Header text -->
+    <h1>Do you need to contact BMW? Look no further! <br> Please contact our team using our social media or using our contact information below.</h1>
+    <!-- Contact information -->
+    <div id="info">
+        <p>Manchester - <b>0161 907 5100</b><br>
+           London - <b>0370 700 5216</b><br>
+           Munich - <b>+49 89 353510</b>
+        </p>
+    </div>
+    <!-- BMW car image -->
+    <img src="./pngs/bmw_car1.png">
+    <!-- Social media links -->
+    <div class="socials">
+        <a class="social-link" href="https://twitter.com/bmw"><img src="./pngs/twitter.png" alt="Twitter"></a>
+        <a class="social-link" href="https://facebook.com/bmw"><img src="./pngs/facebook.png" alt="Facebook"></a>
+        <a class="social-link" href="https://instagram.com/bmw"><img src="./pngs/ig.png" alt="Instagram"></a>
+    </div>
+</body>
+</html>
